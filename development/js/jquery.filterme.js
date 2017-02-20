@@ -307,9 +307,13 @@
                 curves,
                 i;
 
-            // Get the curves
-            points = base._getACV( o.folder + o.curves +'.acv' );
-            curves = base._getCurves(points);
+            if (typeof o.curves === "string") {
+                // Get the curves
+                points = base._getACV( o.folder + o.curves +'.acv' );
+                curves = base._getCurves(points);
+            } else {
+                curves = o.curves;
+            }
 
             // Get the canvas image data
             var imageData = base.ctx.getImageData( 0, 0, base.canvas.width, base.canvas.height ),
