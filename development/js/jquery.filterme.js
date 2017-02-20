@@ -31,7 +31,7 @@
             filter = $.filterMe.filters[ base.$el.data('filter') ] || false;
 
             // Get the options
-            o = base.options = $.extend({}, $.filterMe.defaults, filter);
+            o = base.options = options || $.extend({}, $.filterMe.defaults, filter);
 
             // Trigger actions
             base.$el.trigger('fitlerIO._init', base);
