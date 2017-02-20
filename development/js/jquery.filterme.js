@@ -54,6 +54,7 @@
             var image = new Image();
 
             // Get image src and load it
+            image.crossOrigin = base.$el.attr('crossOrigin');
             image.src = base.$el.attr('src');
             image.onload = function() {
 
